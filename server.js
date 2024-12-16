@@ -28,7 +28,7 @@ app.post('/api/addUser', async (req, res) => {
     const sheets = google.sheets({ version: 'v4', auth });
 
     const response = await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.SPREADSHEET_ID,
+      spreadsheetId: process.env.spreadsheetId,
       range: 'Sheet1',
       valueInputOption: 'USER_ENTERED',
       resource: {
